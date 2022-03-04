@@ -1,20 +1,33 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import Constants from 'expo-constants';
+import { Button, Platform, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
+import TodoItem from './conponents/TodoItem';
+import Row from './conponents/Row';
+import Padding from './conponents/Padding';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <SafeAreaView style={ styles.container }>
+      <Padding padding={ 12 }>
+       <TodoItem/>
+       <Row>
+         <TextInput style={ styles.input }/>
+         <Button title="Send" onPress={ () => {} }/>
+       </Row>
+      </Padding>
+      
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    paddingTop: Platform.OS === 'android' ?  Constants.statusBarHeight : 0 ,
   },
+  input: {
+    flex: 1,
+    borderWidth: 1, 
+  }
 });
