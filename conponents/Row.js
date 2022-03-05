@@ -1,13 +1,19 @@
 import React from 'react';
-import { View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-function Row( { children }){
+function Row( { children, style }){
+
     return (
-    <View style ={{ flexDirection: 'row' }}>
+    <View style ={ [ styles.row, style]}>
         { children }
     </View>
     )
-
 }
+
+const styles = StyleSheet.create({
+    row: {
+        flexDirection: 'row',
+    }
+})
 
 export default Row;

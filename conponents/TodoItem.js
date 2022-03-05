@@ -4,9 +4,9 @@ import Row from './Row';
  
 function TodoItem(){
     return (
-        <Row>
-          <Switch/>
-          <Text>할 일 목록</Text>
+        <Row style={{ alignItems: 'center', marginBottom: 12,}}>
+          <Switch style={{ marginRight: 8, }}  />
+          <Text>할 일 </Text>
         </Row>
     )
 }
