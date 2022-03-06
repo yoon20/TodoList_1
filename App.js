@@ -11,6 +11,9 @@ export default function App() {
     <SafeAreaView style={ styles.container }>
       <Padding padding={ 12 }>
        <TodoItem/>
+       <TodoItem/>
+       <TodoItem/>
+       <TodoItem/>
        <Row>
          <TextInput style={ styles.input }/>
          <Button title="Send" onPress={ () => {} }/>
