@@ -5,8 +5,6 @@ import { Alert, Button, FlatList, Platform, SafeAreaView, StyleSheet, Text, Text
 import TodoItem from './conponents/TodoItem';
 import Row from './conponents/Row';
 import Padding from './conponents/Padding';
-// import { v4 as uuid } from 'uuid';
-
 
 export default function App() {
   const [ list,setList ] = useState( [
