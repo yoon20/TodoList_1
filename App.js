@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React,{useState} from 'react';
 import Constants from 'expo-constants';
 import { Button, Platform, SafeAreaView, StyleSheet, Text, TextInput, View } from 'react-native';
 import TodoItem from './conponents/TodoItem';
@@ -7,13 +7,16 @@ import Row from './conponents/Row';
 import Padding from './conponents/Padding';
 
 export default function App() {
+  const [ list,setList ] = useState( [
+    '할 일 1',
+    '할 일 2',
+  ]);
   return (
     <SafeAreaView style={ styles.container }>
       <Padding padding={ 12 }>
-       <TodoItem/>
-       <TodoItem/>
-       <TodoItem/>
-       <TodoItem/>
+        {/*출력*/}
+        {list.map( (item, index) => <TodoItem key ={ item } label={ item }/> ) }
+        {/*입력*/}
        <Row>
          <TextInput style={ styles.input }/>
          <Button title="Send" onPress={ () => {} }/>
