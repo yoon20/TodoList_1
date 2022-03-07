@@ -2,7 +2,7 @@ import React,{ useState } from 'react';
 import { Button, Switch, Text } from 'react-native';
 import Row from './Row';
  
-function TodoItem({ label, id, onDelete }){
+function TodoItem({ label, onDelete }){
   const [ isDone, setDone ] = useState( false );
     return (
         <Row style={{ alignItems: 'center', marginBottom: 12, }}>
@@ -13,7 +13,7 @@ function TodoItem({ label, id, onDelete }){
           <Text style={{ color: isDone ? '#eee' : '#000', flex: 1 }}> 
           { label ?? '(내용 없음)'}
           </Text>
-          <Button title="삭제" onPress={ ()=> onDelete( id )} />
+          <Button title="삭제" onPress={ onDelete } />
         </Row>
     )
 }
