@@ -7,7 +7,10 @@ import Row from './conponents/Row';
 import Padding from './conponents/Padding';
 
 export default function App() {
-  const [ list,setList ] = useState( [] );
+  const [ list,setList ] = useState( [
+    { key: '1',content: '할 일 1'},
+    { key: '2',content: '할 일 2'},
+  ]);
   const [inputText, setInputText] = useState( '' );
   const addItem = useCallback( ()=>{
     setList( [...list, { key: new Date().toString(), content: inputText } ])
@@ -24,8 +27,9 @@ export default function App() {
         data = { list }
         renderItem = { item => (
           <TodoItem
+            id={ item.item.key }
             label = {item.item.content } 
-            onDelete ={ ()=> removeItem( item.item.key ) }
+            onDelete ={ removeItem }
           />
          ) }
         style ={{ flex: 1 }}
