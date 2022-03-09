@@ -8,8 +8,7 @@ import Padding from './conponents/Padding';
 
 export default function App() {
   const [ list,setList ] = useState( [
-    { key: '1',content: '할 일 1'},
-    { key: '2',content: '할 일 2'},
+ 
   ]);
   const [inputText, setInputText] = useState( '' );
   const addItem = useCallback( ()=>{
@@ -27,14 +26,13 @@ export default function App() {
         data = { list }
         renderItem = { item => (
           <TodoItem
-            id={ item.item.key }
             label = {item.item.content } 
-            onDelete ={ removeItem }
+            onDelete ={ ()=> removeItem( item.item.key ) }
           />
          ) }
         style ={{ flex: 1 }}
         />
-        {/*입력*/}
+        {/*입력*/} 
        <Row>
          <TextInput 
          style={ styles.input }
